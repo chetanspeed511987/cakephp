@@ -51,7 +51,7 @@ class CacheRegistry extends ObjectRegistry {
  * @throws Cake\Error\Exception
  */
 	protected function _throwMissingClassError($class, $plugin) {
-		throw new Error\Exception(__d('cake_dev', 'Cache engine %s is not available.', $class));
+		throw new Error\Exception(sprintf('Cache engine %s is not available.', $class));
 	}
 
 /**
@@ -84,7 +84,7 @@ class CacheRegistry extends ObjectRegistry {
 
 		if (!$instance->init($config)) {
 			throw new Error\Exception(
-				__d('cake_dev', 'Cache engine %s is not properly configured.', $class)
+				sprintf('Cache engine %s is not properly configured.', $class)
 			);
 		}
 
