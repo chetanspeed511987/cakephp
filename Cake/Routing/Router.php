@@ -787,8 +787,7 @@ class Router {
 			// named route.
 			$route = static::$_routes->get($url);
 			if (!$route) {
-				throw new Error\Exception(__d(
-					'cake_dev',
+				throw new Error\Exception(sprintf(
 					'No route matching the name "%s" was found.',
 					$url
 				));

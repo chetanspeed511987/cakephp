@@ -77,10 +77,9 @@ class LogEngineRegistry extends ObjectRegistry {
 			return $instance;
 		}
 
-		throw new Error\Exception(__d(
-			'cake_dev',
+		throw new Error\Exception(
 			'Loggers must implement Cake\Log\LogInterface.'
-		));
+		);
 	}
 
 /**

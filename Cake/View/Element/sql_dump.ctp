@@ -77,5 +77,5 @@ if ($noLogs || isset($_forced_from_dbo_)):
 	<?php
 	endforeach;
 else:
-	printf('<p>%s</p>', __d('cake_dev', 'Encountered unexpected %s. Cannot generate SQL log.', '$sqlLogs'));
+	printf('<p>%s</p>', sprintf('Encountered unexpected %s. Cannot generate SQL log.', '$sqlLogs'));
 endif;

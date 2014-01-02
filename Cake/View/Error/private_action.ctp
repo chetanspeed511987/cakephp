@@ -15,14 +15,14 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
-<h2><?php echo __d('cake_dev', 'Private Method in %s', $controller); ?></h2>
+<h2><?php echo sprintf('Private Method in %s', $controller); ?></h2>
 <p class="error">
-	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
-	<?php echo __d('cake_dev', '%s%s cannot be accessed directly.', '<em>' . h($controller) . '::</em>', '<em>' . h($action) . '()</em>'); ?>
+	<strong>Error: </strong>
+	<?php echo sprintf('%s%s cannot be accessed directly.', '<em>' . h($controller) . '::</em>', '<em>' . h($action) . '()</em>'); ?>
 </p>
 <p class="notice">
-	<strong><?php echo __d('cake_dev', 'Notice'); ?>: </strong>
-	<?php echo __d('cake_dev', 'If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Error' . DS . 'private_action.ctp'); ?>
+	<strong>Notice: </strong>
+	<?php echo sprintf('If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Error' . DS . 'private_action.ctp'); ?>
 </p>
 
 <?php echo $this->element('exception_stack_trace'); ?>

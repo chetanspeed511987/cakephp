@@ -951,7 +951,7 @@ class Email {
  */
 	protected function _constructTransport($name) {
 		if (!isset(static::$_transportConfig[$name]['className'])) {
-			throw new Error\Exception(__d('cake_dev', 'Transport config "%s" is missing.', $name));
+			throw new Error\Exception(sprintf('Transport config "%s" is missing.', $name));
 		}
 
 		$config = static::$_transportConfig[$name];
@@ -981,7 +981,7 @@ class Email {
 			$this->_messageId = $message;
 		} else {
 			if (!preg_match('/^\<.+@.+\>$/', $message)) {
-				throw new Error\SocketException(__d('cake_dev', 'Invalid format to Message-ID. The text should be something like "<uuid@server.com>"'));
+				throw new Error\SocketException('Invalid format to Message-ID. The text should be something like "<uuid@server.com>"');
 			}
 			$this->_messageId = $message;
 		}

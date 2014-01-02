@@ -770,7 +770,7 @@ class AuthComponent extends Component {
 		foreach ($config as $class => $settings) {
 			$className = App::classname($class, 'Controller/Component/Auth', 'Authenticate');
 			if (!class_exists($className)) {
-				throw new Error\Exception(__d('cake_dev', 'Authentication adapter "%s" was not found.', $class));
+				throw new Error\Exception(sprintf('Authentication adapter "%s" was not found.', $class));
 			}
 			if (!method_exists($className, 'authenticate')) {
 				throw new Error\Exception(sprintf('Authentication objects must implement an %s method.', 'authenticate()'));

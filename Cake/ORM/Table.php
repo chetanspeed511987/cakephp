@@ -1379,7 +1379,7 @@ class Table implements EventListener {
 		}
 
 		throw new \BadMethodCallException(
-			__d('cake_dev', 'Unknown finder method "%s"', $type)
+			sprintf('Unknown finder method "%s"', $type)
 		);
 	}
 
@@ -1410,8 +1410,7 @@ class Table implements EventListener {
 		$makeConditions = function($fields, $args) {
 			$conditions = [];
 			if (count($args) < count($fields)) {
-				throw new \Cake\Error\Exception(__d(
-					'cake_dev',
+				throw new \Cake\Error\Exception(sprintf(
 					'Not enough arguments to magic finder. Got %s required %s',
 					count($args),
 					count($fields)
@@ -1424,10 +1423,9 @@ class Table implements EventListener {
 		};
 
 		if ($hasOr !== false && $hasAnd !== false) {
-			throw new \Cake\Error\Exception(__d(
-				'cake_dev',
+			throw new \Cake\Error\Exception(
 				'Cannot mix "and" & "or" in a magic finder. Use find() instead.'
-			));
+			);
 		}
 
 		if ($hasOr === false && $hasAnd === false) {

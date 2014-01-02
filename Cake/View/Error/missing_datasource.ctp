@@ -17,17 +17,17 @@
 
 $pluginDot = empty($plugin) ? null : $plugin . '.';
 ?>
-<h2><?php echo __d('cake_dev', 'Missing Datasource'); ?></h2>
+<h2>Missing Datasource</h2>
 <p class="error">
-	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
-	<?php echo __d('cake_dev', 'Datasource class %s could not be found.', '<em>' . h($pluginDot . $class) . '</em>'); ?>
+	<strong>Error: </strong>
+	<?php echo sprintf('Datasource class %s could not be found.', '<em>' . h($pluginDot . $class) . '</em>'); ?>
 	<?php if (isset($message)):  ?>
 		<?php echo h($message); ?>
 	<?php endif; ?>
 </p>
 <p class="notice">
-	<strong><?php echo __d('cake_dev', 'Notice'); ?>: </strong>
-	<?php echo __d('cake_dev', 'If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Error' . DS . 'missing_datasource.ctp'); ?>
+	<strong>Notice: </strong>
+	<?php echo sprintf('If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Error' . DS . 'missing_datasource.ctp'); ?>
 </p>
 
 <?php echo $this->element('exception_stack_trace'); ?>
