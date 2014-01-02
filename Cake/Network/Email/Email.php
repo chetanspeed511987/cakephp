@@ -1147,7 +1147,7 @@ class Email {
 			return;
 		}
 		if (isset(static::$_transportConfig[$key])) {
-			throw new Error\Exception('Cannot modify an existing config "%s"', $key);
+			throw new Error\Exception(sprintf('Cannot modify an existing config "%s"', $key));
 		}
 		if (is_object($config)) {
 			$config = ['className' => $config];

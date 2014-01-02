@@ -139,7 +139,7 @@ class Security {
  */
 	public static function setCost($cost) {
 		if ($cost < 4 || $cost > 31) {
-			throw new Error\Exception(sprintf(
+			throw new Error\Exception(vsprintf(
 				'Invalid value, cost must be between %s and %s',
 				array(4, 31)
 			));
@@ -158,13 +158,13 @@ class Security {
  */
 	public static function rijndael($text, $key, $operation) {
 		if (empty($key)) {
-			throw new Error\Exception('You cannot use an empty key for %s', 'Security::rijndael()');
+			throw new Error\Exception('You cannot use an empty key for Security::rijndael()');
 		}
 		if (empty($operation) || !in_array($operation, array('encrypt', 'decrypt'))) {
-			throw new Error\Exception('You must specify the operation for %s, either encrypt or decrypt', 'Security::rijndael()');
+			throw new Error\Exception('You must specify the operation for Security::rijndael(), either encrypt or decrypt');
 		}
 		if (strlen($key) < 32) {
-			throw new Error\Exception('You must use a key larger than 32 bytes for %s', 'Security::rijndael()');
+			throw new Error\Exception('You must use a key larger than 32 bytes for Security::rijndael()');
 		}
 		$algorithm = MCRYPT_RIJNDAEL_256;
 		$mode = MCRYPT_MODE_CBC;
@@ -213,7 +213,7 @@ class Security {
 		}
 
 		if ($salt === true || strpos($salt, '$2y$') !== 0 || strlen($salt) < 29) {
-			throw new Error\Exception(sprintf(
+			throw new Error\Exception(vsprintf(
 				'Invalid salt: %s for %s Please visit http://www.php.net/crypt and read the appropriate section for building %s salts.',
 				array($salt, 'blowfish', 'blowfish')
 			));

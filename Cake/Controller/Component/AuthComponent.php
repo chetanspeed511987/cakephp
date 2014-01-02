@@ -773,7 +773,7 @@ class AuthComponent extends Component {
 				throw new Error\Exception(sprintf('Authentication adapter "%s" was not found.', $class));
 			}
 			if (!method_exists($className, 'authenticate')) {
-				throw new Error\Exception(sprintf('Authentication objects must implement an %s method.', 'authenticate()'));
+				throw new Error\Exception('Authentication objects must implement an authenticate() method.');
 			}
 			$settings = array_merge($global, (array)$settings);
 			$this->_authenticateObjects[] = new $className($this->_registry, $settings);
