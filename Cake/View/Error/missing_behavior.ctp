@@ -18,7 +18,7 @@ use Cake\Core\Plugin;
 
 $pluginDot = empty($plugin) ? null : $plugin . '.';
 ?>
-<h2>Missing Behavior></h2>
+<h2>Missing Behavior</h2>
 <p class="error">
 	<strong>Error: </strong>
 	<?php echo sprintf('%s could not be found.', '<em>' . h($pluginDot . $class) . '</em>'); ?>
